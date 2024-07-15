@@ -2,6 +2,7 @@ import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import OAuth from '../components/OAuth';
 import { signInFailure, signInStart, signInSuccess } from '../redux/user/userSlice';
 
 export default function SignIn() {
@@ -28,7 +29,6 @@ export default function SignIn() {
       if(data.success === false){
         dispatch(signInFailure(data.message));
       }
-      
       if(res.ok){
         dispatch(signInSuccess(data));
         navigate('/');
@@ -53,7 +53,6 @@ export default function SignIn() {
         {/* right */}
         <div className="flex-1">
           <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
-            
             <div>
               <Label value='Your email'/>
               <TextInput type='email' placeholder='name@gmail.com' id='email' onChange={handleChange}/>
@@ -72,6 +71,7 @@ export default function SignIn() {
                 ) : 'Sign In'
               }
             </Button>
+            <OAuth/>
           </form>
           <div className='flex gap-2 text-sm mt-5'>
             <span>Don't Have an account?</span>
