@@ -4,12 +4,13 @@ import Header from './components/Header'
 import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute '
 import PrivateRoute from './components/PrivateRoute'
 import About from './pages/About'
+import Createpost from './pages/Createpost'
 import Dashboard from './pages/Dashboard'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
-import CreatePost from './pages/Createpost'
+import UpdatePost from './pages/UpdatePost'
 export default function App() {
   return (
     <BrowserRouter>
@@ -21,7 +22,8 @@ export default function App() {
         <Route path="/dashboard" element={<Dashboard/>}/>
       </Route>
       <Route element={<OnlyAdminPrivateRoute />}>
-        <Route path="/create-post" element={<CreatePost/>}/>
+        <Route path="/create-post" element={<Createpost/>}/>
+        <Route path="/update-post/:postId" element={<UpdatePost/>}/>
       </Route>
       <Route path="/sign-in" element={<SignIn/>}/>
       <Route path="/sign-up" element={<SignUp/>}/>
