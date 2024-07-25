@@ -3,6 +3,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute '
 import PrivateRoute from './components/PrivateRoute'
+import ScrollToTop from './components/ScrollToTop'
 import About from './pages/About'
 import Createpost from './pages/Createpost'
 import Dashboard from './pages/Dashboard'
@@ -15,6 +16,7 @@ import UpdatePost from './pages/UpdatePost'
 export default function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
      <Header/>
      <Routes>
       <Route path="/" element={<Home/>}/>
