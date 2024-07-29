@@ -13,6 +13,7 @@ import Projects from './pages/Projects'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import UpdatePost from './pages/UpdatePost'
+import Search from './pages/Search'
 export default function App() {
   return (
     <BrowserRouter>
@@ -30,6 +31,7 @@ export default function App() {
       </Route>
       <Route path="/sign-in" element={<SignIn/>}/>
       <Route path="/sign-up" element={<SignUp/>}/>
+      <Route path='/search' element={<Search/>}/>
       <Route path="/projects" element={<Projects/>}/>
       <Route path='/post/:postSlug' element={<PostPage/>}/>
      </Routes>
